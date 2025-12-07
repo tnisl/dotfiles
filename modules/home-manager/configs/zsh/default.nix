@@ -6,8 +6,7 @@
 		autosuggestion.enable = true;
 		shellAliases = {
 			upd = "sudo nix-channel --update";
-			upg = "sudo nixos-rebuild switch --upgrade";
-			hupd = "home-manager switch --flake ~/.config/home-manager";
+			upg = "sudo nixos-rebuild switch --flake ~/nixos#cyme-asus";
 			gc = "sudo nix-collect-garbage -d";
 			hgc = "nix-collect-garbage -d";
 		};
