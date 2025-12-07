@@ -86,8 +86,8 @@
         "${modifier}+t" = "floating toggle";
         #"--whole-window ${modifier}+Shift+button1" = "resize";
 
-        # reload waybar
-          # "${modifier}+r" = "exec reload_wb";
+          #reload waybar
+          "${modifier}+Shift+r" = "exec reload_wb";
 
 
       };
