@@ -17,6 +17,7 @@
 
         #basic layout
         modules-left = [
+          "custom/notify"
           "hyprland/workspaces" 
           "sway/workspaces"
           "custom/cava"
@@ -117,6 +118,14 @@
           disable-scroll = true;
 
         };
+
+        "custom/notify" = {
+          format = "";
+          on-click = "swaync-client -t -sw";
+        };
+
+
+
       };
     };
 

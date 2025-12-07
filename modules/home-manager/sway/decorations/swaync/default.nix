@@ -14,7 +14,7 @@ in
       
 
       # positioning
-      positionX = "center";       
+      positionX = "left";       
       positionY = "top";         
       control-center-width = 400; 
       fit-to-screen = false;

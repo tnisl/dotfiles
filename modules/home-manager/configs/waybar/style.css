@@ -9,6 +9,7 @@
 @define-color lavender #b4befe;
 @define-color red #f38ba8;
 @define-color peach #fab387;
+@define-color mauve #cba6f7;
 @define-color surface0 #51576d;
 
 
@@ -80,8 +81,8 @@ window#waybar {
 
 #custom-cava{
 	background-color: @green;
-	color: @background 
 }
+
 
 
 
@@ -94,11 +95,18 @@ window#waybar {
 #idle_inhibitor,
 #power-profiles-daemon,
 #custom-cava,
+#custom-notify,
 #mpd {
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 20px;
     color: @background;
+}
+
+
+#custom-notify{
+  background-color: @green;
+  padding-right: 12px;
 }
 
 #clock {
