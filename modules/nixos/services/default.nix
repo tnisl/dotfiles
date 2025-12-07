@@ -30,6 +30,8 @@
       };
     };
 
+    openssh.enable = true;
+
   };
 
 }
