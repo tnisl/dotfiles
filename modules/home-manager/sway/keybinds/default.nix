@@ -87,7 +87,7 @@
         #"--whole-window ${modifier}+Shift+button1" = "resize";
 
         # reload waybar
-        "${modifier}+r" = "exec reload_wb";
+          # "${modifier}+r" = "exec reload_wb";
 
 
       };
