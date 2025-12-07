@@ -1,0 +1,70 @@
+{
+	"logo": {
+		"type": "none"
+	},
+	"display": {
+		"separator": "  "
+	},
+	"modules": [
+		//space
+		{
+			"type": "custom",
+			"format": " "
+		},
+		{
+			"type": "title",
+			"key": "     "
+		},
+	
+		//space
+		{
+			"type": "custom",
+			"format": " "
+		},
+
+
+		{
+			"type": "os",
+			"key": "    ",
+			"keyColor": "#f38ba8",
+			"format": "{pretty-name}"
+		},
+		{
+			"type": "kernel",
+			"key": "    ",
+			"keyColor": "#eba0ac",
+			"format": "{sysname} {release}",
+		},
+		{
+			"type": "wm",
+			"key": "    ",
+			"keyColor": "#fab387",
+			"format": "{pretty-name} {version}"
+		},
+		{
+			"type": "packages",
+			"key": "    󰏖",
+			"keyColor": "#f9e2af",
+			"format": "Nixpkgs {nix-all}"
+		},
+
+		{
+			"type": "shell",
+			"key": "    ",
+			"keyColor": "#94e2d5",
+			"format": "{exe-name} {version}"
+		},
+		{
+			"type": "uptime",
+			"key": "    󰅐",
+			"keyColor": "#a6e3a1",
+			"format": "{hours}h {minutes}m"
+		},
+		//space
+		{
+			"type": "custom",
+			"format": " "
+		}
+	]
+}
+

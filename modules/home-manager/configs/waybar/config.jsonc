@@ -1,0 +1,171 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    
+  "output": ["eDP-1", "HDMI-A-1"],
+  "margin-top": 5,
+    "height": 20, 
+    "width": 1850, 
+    "spacing": 1, 
+  
+
+
+    "modules-left": [
+	"hyprland/workspaces",
+	"sway/workspaces",
+	"custom/cava",
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+	    "group/left"
+    ],
+
+ 
+    "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "warp-on-scroll": false,
+         "format": "{name}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "",
+            "high-priority-named": ["1", "2"],
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         },
+      	"persistent-workspaces": {
+
+	        }
+     },
+    
+
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "format-icons": {
+	    "default" : ""
+        },
+
+	"persistent-workspaces": {
+	}
+    },
+
+
+"pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+},
+
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        "spacing": 10
+    },
+
+    "clock": {
+        // "timezone": "America/New_York",
+	      "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y:%m:%d}"
+    },
+
+ 
+    "battery": {
+        "states": {
+           // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "tooltip-format": "{capacity}%\n{time}",
+        "format-full": "{icon}",
+
+        "format-charging": "",
+        "format-plugged": "",
+        "format-alt": "{capacity}% {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+
+   "custom/cava": {
+        "format": "{}",
+        "exec": "~/.config/scripts/waybar-cava.sh"
+    },
+
+    "group/left": {
+	"orientation": "horizontal",
+	"modules": ["idle_inhibitor", "tray", "power-profiles-daemon", "battery"]
+    },
+
+    "pulseaudio": {
+	"format": "{icon} {volume}",
+	//"format-bluetooth": "{icon} 󰂰 {volume}%",
+	"format-muted": "󰖁 ",
+	"format-icons": {
+		//"headphone": "",
+		//"hands-free": "",
+		//"headset": "",
+		//"phone": "",
+		//"portable": "",
+		//"car": "",
+		"default": [
+			"", "", "󰕾", " "
+		],
+	},
+	"scroll-step": 5.0
+	//"on-click": "$HOME/.config/hypr/scripts/Volume.sh --toggle",
+	//"on-click-right": "pavucontrol -t 3",
+	//"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
+	//"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
+	//"tooltip-format": "{icon} {desc} | {volume}%",
+	//"smooth-scrolling-threshold": 1,
+	}
+}
+
+
+
