@@ -4,16 +4,23 @@ let
   
   lightctl = pkgs.writeShellScriptBin "lightctl" ''
     
-    case "$1" in
-    up)
+
+    state=$1
+    
+    
+    if [ "$state" = "up" ]; then
       ${pkgs.brightnessctl}/bin/brightnessctl -q s +2%
-    ;;
-    down)
+    elif [ "$state" = "down" ]; then
       ${pkgs.brightnessctl}/bin/brightnessctl -q s 2%-
-    ;;
-    *)
-    ;;
-    esac
+    fi
+    
+    cur=$(${pkgs.brightnessctl}/bin/brightnessctl g)
+    
+    max=$(${pkgs.brightnessctl}/bin/brightnessctl m)
+    
+    percentage=$(($cur*100/$max))
+    
+    ${pkgs.libnotify}/bin/notify-send "Brightness: $percentage%" -t 5000 -h string:x-canonical-private-synchronous:brightness -h int:value:$percentage
 
     '';
 

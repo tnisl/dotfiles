@@ -7,6 +7,8 @@
 		./reload_waybar/default.nix
 		./theme/default.nix
 		./nightlight/default.nix
+    ./lightctl/default.nix
+    ./volumectl/default.nix
 	];
 
 
