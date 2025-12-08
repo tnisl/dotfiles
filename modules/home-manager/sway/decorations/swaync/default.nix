@@ -93,7 +93,7 @@ in
 
       /* Notification (you can try notify-send :D )*/
       .notification {
-        box-shadow: 0 0 0 1px ${mocha.blue};
+        box-shadow: 0 0 0 1px ${mocha.mauve};
         border-radius: 10px;
         margin: 10px;
       }
@@ -105,8 +105,17 @@ in
         padding: 10px;
         border-radius: 10px;
       }
+
+
+      .notification-content progress {
+        background: ${mocha.mauve};
+      }
       
-      /* Nút "x" để tắt thông báo */
+      .notification-content progress::-moz-progress-bar {
+        background-color: #89b4fa; 
+      }
+      
+      /*X button*/
       .close-button {
         background: ${mocha.red};
         color: ${mocha.base};     
@@ -116,21 +125,21 @@ in
 
       /* DO NO DISTURB >:( */
       .widget-dnd {
-        background: ${mocha.surface0}; /* Nền widget khác màu nền bảng để tách biệt */
-        margin: 10px;                  /* Cách lề xung quanh 10px cho thoáng */
-        border-radius: 10px;           /* Bo tròn widget */
+        background: ${mocha.surface0}; 
+        margin: 10px;                 
+        border-radius: 10px;         
       }
-      
-      /* Cái công tắc gạt (Switch) */
-      /* Trạng thái TẮT (Gạt sang trái) */
+
+
+      /* Switch */
       .widget-dnd > switch {
-        background: ${mocha.overlay0}; /* Màu xám */
+        background: ${mocha.overlay0};
         border-radius: 10px;
       }
       
-      /* Trạng thái BẬT (Gạt sang phải - Checked) */
+      /* Switch checked */
       .widget-dnd > switch:checked {
-        background: ${mocha.mauve};    /* Đổi sang màu Tím -> Báo hiệu đang bật */
+        background: ${mocha.mauve};    
       }
 
 
