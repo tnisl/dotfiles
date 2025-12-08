@@ -20,7 +20,7 @@ let
     
     percentage=$(($cur*100/$max))
     
-    ${pkgs.libnotify}/bin/notify-send "Brightness: $percentage%" -t 5000 -h string:x-canonical-private-synchronous:brightness -h int:value:$percentage
+    ${pkgs.libnotify}/bin/notify-send "Brightness: $percentage%" -t 3000 -h string:x-canonical-private-synchronous:brightness -h int:value:$percentage
 
     '';
 

@@ -30,7 +30,7 @@ let
     
     
     
-    ${pkgs.libnotify}/bin/notify-send "Volume: $percentage%" -t 5000 -h string:x-canonical-private-synchronous:volume -h int:value:$percentage
+    ${pkgs.libnotify}/bin/notify-send "Volume: $percentage%" -t 3000 -h string:x-canonical-private-synchronous:volume -h int:value:$percentage
 
     '';
 
