@@ -10,6 +10,7 @@
     gcc
 
 
+    
     ripgrep
     zsh-powerlevel10k
     gparted

@@ -90,6 +90,9 @@
         "${modifier}+Shift+r" = "exec reload_wb";
 
 
+        #file manager
+        "${modifier}+e" = "exec kitty -e yazi";
+
       };
 
 

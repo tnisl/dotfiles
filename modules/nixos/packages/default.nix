@@ -17,6 +17,7 @@
     jdk21
     lshw
     swayosd
+    yazi
   ];
 
 
