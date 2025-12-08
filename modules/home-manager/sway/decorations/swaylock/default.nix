@@ -28,35 +28,31 @@ in
 
       # color scheme
 
-      # 1. Màu nền vòng tròn (Khi chưa gõ gì)
-      inside-color = "${mocha.base}88"; # Thêm 88 ở cuối để trong suốt (Alpha)
-      ring-color   = "${mocha.blue}";   # Viền ngoài cùng
+      # base
+      inside-color = "${mocha.base}88"; 
+      ring-color   = "${mocha.blue}";   
       
-      # 2. Màu khi gõ phím (Typing)
-      key-hl-color = "${mocha.green}";  # Phím vừa gõ sẽ nháy màu Tím
+      # typing
+      key-hl-color = "${mocha.green}";
       bs-hl-color = "${mocha.red}";
       
-      # 3. Màu khi đang kiểm tra pass (Verifying)
-      ring-ver-color   = "${mocha.yellow}"; # Viền chuyển Tím
-      inside-ver-color = "${mocha.base}";  # Bên trong
-      text-ver-color   = "${mocha.text}";  # Chữ "Verifying" màu trắng
+      # verifying
+      ring-ver-color   = "${mocha.yellow}"; 
+      inside-ver-color = "${mocha.base}";  
+      text-ver-color   = "${mocha.text}";  
       
-      # 4. Màu khi sai pass (Wrong)
-      ring-wrong-color   = "${mocha.red}"; # Viền đỏ
+      # wrong
+      ring-wrong-color   = "${mocha.red}";
       inside-wrong-color = "${mocha.base}";
-      text-wrong-color   = "${mocha.red}"; # Chữ "Wrong" màu đỏ
+      text-wrong-color   = "${mocha.red}"; 
       
-      # 5. Màu khi xóa ký tự (Backspace)
       inside-clear-color = "${mocha.base}";
-      ring-clear-color   = "${mocha.overlay0}"; # Viền xám
+      ring-clear-color   = "${mocha.overlay0}"; 
       text-clear-color   = "${mocha.overlay0}";
 
-      # --- CẤU HÌNH CHỮ (TEXT) ---
-      #font = "JetBrainsMono Nerd Font"; # Dùng font hệ thống của bạn
       font-size = 24;
       text-color = "${mocha.text}";
       
-      # Ẩn dòng chữ "Type password..." đi cho gọn (chỉ hiện vòng tròn thôi)
       indicator-idle-visible = false;
 
 
