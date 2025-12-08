@@ -23,22 +23,18 @@
         #"XF86MonBrightnessUp"  = "exec brightnessctl set 5%+";
         #"XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
 
-        "--locked XF86MonBrightnessUp" = "exec swayosd-client --brightness raise";
-        "--locked XF86MonBrightnessDown" = "exec swayosd-client --brightness lower";
+        "--locked XF86MonBrightnessUp" = "exec lightctl up";
+        "--locked XF86MonBrightnessDown" = "exec lightctl down";
 
         #volume control
 
 
-        #"--locked XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-        #"--locked XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
-        #"--locked XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
-        #"--locked XF86AudioMicMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
 
+        "--locked XF86AudioRaiseVolume" = "exec volumectl up";
+        "--locked XF86AudioLowerVolume" = "exec volumectl down";
+        "--locked XF86AudioMicMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+        "--locked XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
 
-        "--locked XF86AudioRaiseVolume" = "exec swayosd-client --output-volume raise";
-        "--locked XF86AudioLowerVolume" = "exec swayosd-client --output-volume lower";
-        "--locked XF86AudioMute" = "exec swayosd-client --output-volume mute-toggle";
-        "--locked XF86AudioMicMute" = "exec swayosd-client --input-volume mute-toggle";
 
         # screen capture
         "${modifier}+s"  = "exec screen-capture";
