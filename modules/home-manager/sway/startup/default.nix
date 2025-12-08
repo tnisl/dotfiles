@@ -8,7 +8,7 @@
 
       startup = [
         {command = "swaymsg workspace number 1";}
-        {command = "waybar";}
+        {command = "--no-startup-id waybar";}
         {command = "swww-daemon";}
         {command = "nm-applet";}
         # {command = "fcitx5";}
