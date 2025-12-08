@@ -55,7 +55,6 @@ in
   imports = [
     ./swaync/default.nix
     ./swaylock/default.nix
-    ./swayosd/default.nix
     ./swaynag/default.nix
   ];
 
