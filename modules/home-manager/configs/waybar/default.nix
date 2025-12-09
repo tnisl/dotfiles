@@ -20,7 +20,7 @@
           "custom/notify"
           "hyprland/workspaces" 
           "sway/workspaces"
-          "custom/cava"
+          #"custom/cava"
         ];
 
         modules-center = [
