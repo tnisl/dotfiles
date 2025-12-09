@@ -18,6 +18,10 @@
     lshw
     swayosd
     yazi
+    asusctl # asus only!
+    powertop # tuning 
+    intel-media-driver
+    libva-utils
   ];
 
 
