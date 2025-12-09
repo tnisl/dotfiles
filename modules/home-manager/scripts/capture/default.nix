@@ -7,11 +7,11 @@ let
 
   	  	${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy
 
-  	  	${pkgs.libnotify}/bin/notify-send "Screen Captured!"
+  	  	${pkgs.libnotify}/bin/notify-send "Screen Captured!" -t 3000
   	'';
 
   	region-capture = pkgs.writeShellScriptBin "region-capture" ''
-  		${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy ; ${pkgs.libnotify}/bin/notify-send "Region Capture!"
+  		${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy ; ${pkgs.libnotify}/bin/notify-send "Region Capture!" -t 3000
   	'';
 
 
