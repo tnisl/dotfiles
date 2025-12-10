@@ -14,7 +14,7 @@
         # pad = "20x20";
       
       # Khi resize cửa sổ, không hiện cái khung bao quanh
-      resize-by-cells = "no";
+      resize-by-cells = "yes";
     };
 
     # Cấu hình chuột
