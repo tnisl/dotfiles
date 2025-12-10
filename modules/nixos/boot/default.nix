@@ -19,7 +19,13 @@
 		};
 
 		loader.efi.canTouchEfiVariables = true;
-		kernelParams = [ "i915.enable_psr=0" ];
+		kernelParams = [
+      "i915.enable_psr=2"
+      "nvme_core.default_ps_max_latency_us=5500"
+      "pcie_aspm=force"
+      "maxcpus=4"
+    ];
+
 	};
 
 
