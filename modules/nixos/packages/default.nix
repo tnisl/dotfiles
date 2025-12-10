@@ -17,11 +17,10 @@
     jdk21
     lshw
     swayosd
-    yazi
     asusctl # asus only!
     powertop # tuning 
-    intel-media-driver
-    libva-utils
+    undervolt
+    wlsunset
   ];
 
 
