@@ -6,7 +6,7 @@
     config = rec {
       output = {
         "eDP-1" = {
-          mode = "1920x1080@144Hz";
+          mode = "1920x1080@60Hz";
         };
 
 
