@@ -140,8 +140,8 @@ window#waybar {
 }
 
 #battery.critical:not(.charging) {
-    background-color: @background;
-    color: @foreground;
+    background-color: @peach;
+    color: @background;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
