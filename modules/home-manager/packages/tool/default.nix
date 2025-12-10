@@ -24,7 +24,6 @@
     wl-clipboard
     libnotify
     pavucontrol
-    xfce.thunar
     swaynotificationcenter
     imagemagick
     brightnessctl
