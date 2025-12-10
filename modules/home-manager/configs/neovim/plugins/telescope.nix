@@ -12,19 +12,6 @@
         '';
       }
       telescope-fzf-native-nvim
-      
-      # --- Treesitter (Highlight cú pháp) ---
-      # Lưu ý: Nix quản lý Treesitter tốt hơn tự compile
-      (nvim-treesitter.withPlugins (p: [
-        p.tree-sitter-nix
-        p.tree-sitter-vim
-        p.tree-sitter-bash
-        p.tree-sitter-lua
-        p.tree-sitter-python
-        p.tree-sitter-json
-        p.tree-sitter-cpp
-      ]))
-
 
   ];
 

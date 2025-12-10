@@ -6,7 +6,14 @@
         plugin = catppuccin-nvim;
         type = "lua";
         config = ''
-          require("catppuccin").setup({ transparent_background = true })
+          require("catppuccin").setup({
+            transparent_background = true,
+
+            integrations = {
+              markdown = true;
+            }
+
+          })
           vim.cmd.colorscheme "catppuccin"
         '';
       }

@@ -10,6 +10,8 @@
   ./plugins/lsp.nix
   ./plugins/cmp.nix
   ./plugins/dashboard.nix
+  ./plugins/treesitter.nix
+  ./plugins/render-markdown.nix
   ];
 
 
@@ -57,9 +59,6 @@
       vim.cmd("set shiftwidth=2")
 
       vim.keymap.set('i', '<C-BS>', '<C-W>', { noremap = true })
-
-
-
 
 
     '';
