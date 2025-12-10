@@ -8,7 +8,7 @@
 			enable_audio_bell = false;
 			cursor_trail = 0;
 			cursor_trail_decay = "0.1 0.4";
-			map = "ctrl+backspace send_text all \\x17";
+      # map = "ctrl+backspace send_text all \\x17";
 
 			background = "#1e1e2e";
 			foreground = "#cdd6f4";
