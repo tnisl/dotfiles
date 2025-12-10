@@ -13,16 +13,15 @@
         p.tree-sitter-markdown
         p.tree-sitter-markdown_inline
       ]))
+      nvim-treesitter-parsers.latex
 
   ];
 
 
       programs.neovim.extraLuaConfig = ''
       require('nvim-treesitter.configs').setup({
-        -- Xóa dòng ensure_installed nếu có (NixOS không cần)
         
         highlight = {
-          -- Phải set là TRUE thì cột Highlight mới được tick
           enable = true, 
           
           additional_vim_regex_highlighting = false,
