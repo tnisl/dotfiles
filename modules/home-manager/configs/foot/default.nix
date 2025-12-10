@@ -9,7 +9,7 @@
   
   settings = {
     main = {
-      font = "Caskaydia Nerd Font";
+      font = "CaskaydiaCove Nerd Font:size=11";
       
         # pad = "20x20";
       
@@ -48,6 +48,10 @@
       bright7  = "a6adc8";   # Subtext 0
     };
   };
+
+
+
+
 };
 
 }
