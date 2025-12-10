@@ -10,6 +10,9 @@
 		./rofi/default.nix
 		./zsh/default.nix
     ./btop/default.nix
-    ./cursors/default.nix
+    ./theme/default.nix
+    ./yazi/default.nix
+		./neovim/default.nix
+    ./foot/default.nix
 	];
 }
