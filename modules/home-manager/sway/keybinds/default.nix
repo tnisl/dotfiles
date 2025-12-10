@@ -7,7 +7,7 @@
 
       #default
       modifier = "Mod4";
-      terminal = "kitty"; 
+      terminal = "foot"; 
       menu = "rofi -show drun";
       # the mkdOptionDefault make sure not erase all the default configs
       keybindings = 
@@ -87,7 +87,7 @@
 
 
         #file manager
-        "${modifier}+e" = "exec kitty -e yazi";
+        "${modifier}+e" = "exec foot -e yazi";
 
       };
 
