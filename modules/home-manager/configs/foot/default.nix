@@ -11,16 +11,11 @@
     main = {
       font = "CaskaydiaCove Nerd Font:size=11";
       
-        # pad = "20x20";
+      pad = "20x20";
       
-      # Khi resize cửa sổ, không hiện cái khung bao quanh
       resize-by-cells = "yes";
     };
 
-    # Cấu hình chuột
-    mouse = {
-      hide-when-typing = "yes";
-    };
 
     colors = {
       alpha = "0.9";
