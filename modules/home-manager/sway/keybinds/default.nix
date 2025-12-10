@@ -7,7 +7,7 @@
 
       #default
       modifier = "Mod4";
-      terminal = "foot"; 
+      terminal = "kitty"; 
       menu = "rofi -show drun";
       # the mkdOptionDefault make sure not erase all the default configs
       keybindings = 
