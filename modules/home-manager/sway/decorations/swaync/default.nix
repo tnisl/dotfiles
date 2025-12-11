@@ -1,9 +1,12 @@
-{pkgs, lib, ...}:
+{pkgs, lib, config, ...}:
 let
   mocha = import ../theme.nix;
 
 in
 {
+
+  
+
 
   
   services.swaync = {
@@ -21,7 +24,8 @@ in
       # widgets that allowed to popup
       widgets = [
         "title"           
-        "dnd"             
+        "dnd"
+        "buttons-grid"
         "volume"
         "backlight"
         "mpris"           
@@ -49,9 +53,40 @@ in
           label = "  "; 
         };
         backlight = {
-          label = "☀  "; # Icon mặt trời
+          label = "☀  "; 
+        };
+
+        buttons-grid = {
+          actions = [
+            {
+              label = "";
+              type = "toggle";
+              active = "true";
+            }
+            
+            {
+              label = "󰂯";
+              type = "toggle";
+              active = "true";
+            }     
+
+            {
+              label = "";
+              type = "toggle";
+              active = "true";
+            }
+
+            {
+              label = "󰄄";
+              type = "normal";
+              active = "true";
+            }
+
+          ];
         };
       };
+
+
 
     };
 
@@ -148,9 +183,9 @@ in
 
       /* Mpris */
       .widget-mpris {
-        background: ${mocha.surface0}; /* Nền tách biệt */
-        padding: 10px;                 /* Nội dung bên trong cách viền 10px */
-        margin: 10px;                  /* Cách các widget khác 10px */
+        background: ${mocha.surface0}; 
+        padding: 10px;                 
+        margin: 10px;                  
         border-radius: 10px;           
       }
 
@@ -165,7 +200,7 @@ in
         border-radius: 10px;
       }
       
-      /* Phần rãnh trượt (Trough) */
+      /* (Trough) */
       .widget-volume > box > scale > trough,
       .widget-backlight > box > scale > trough {
         border: none;
@@ -174,12 +209,27 @@ in
         min-height: 8px;
       }
       
-      /* Phần đã trượt (Highlight) */
+      /* (Highlight) */
       .widget-volume > box > scale > trough > highlight,
       .widget-backlight > box > scale > trough > highlight {
         background: ${mocha.mauve};
         border-radius: 5px;
       }
+
+      /* buttons-grid */
+      .widget-buttons-grid > flowbox{
+        padding-left: 15px;
+
+      }
+      .widget-buttons-grid > flowbox > flowboxchild > button{
+        padding: 10 20 10 20;
+      }
+      .widget-buttons-grid > flowbox > flowboxchild > button:checked{
+        background-color: ${mocha.mauve};
+      }
+
+
+
 
 
 
