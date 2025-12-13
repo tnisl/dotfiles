@@ -12,6 +12,7 @@
     ./security/default.nix
     ./users/default.nix
     ./fonts/default.nix
+    ./i18n/default.nix
   ];
 
 

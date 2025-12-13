@@ -21,6 +21,7 @@
     powertop # tuning 
     undervolt
     wlsunset
+    libsForQt5.qt5ct
   ];
 
 
