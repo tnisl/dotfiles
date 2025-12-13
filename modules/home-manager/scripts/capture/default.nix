@@ -3,7 +3,6 @@
 
 let
 	screen-capture= pkgs.writeShellScriptBin "screen-capture" ''
-		MONITOR=$(${pkgs.hyprland}/bin/hyprctl monitors | ${pkgs.gawk}/bin/awk '/Monitor/{name=$2} /focused: yes/{print name}')
 
   	  	${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy
 
