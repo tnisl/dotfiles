@@ -11,7 +11,8 @@
           enable_git_status = true,
           enable_diagnostics = true
         })
-        vim.keymap.set('n', '<S-e>', ':Neotree filesystem toggle left<CR>', {})
+        vim.g.mapleader = " "
+        vim.keymap.set('n', '<Leader>e', ':Neotree filesystem toggle left<CR>', {})
 
         vim.keymap.set('n', '<C-l>', function()
           if vim.bo.filetype == "neo-tree" then
