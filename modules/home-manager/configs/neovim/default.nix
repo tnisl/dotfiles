@@ -58,9 +58,20 @@
       vim.cmd("set softtabstop=2")
       vim.cmd("set shiftwidth=2")
       vim.keymap.set('i', '<C-BS>', '<C-W>', { noremap = true })
+
+
       vim.opt.number = true
       vim.opt.relativenumber = true
       vim.opt.cursorline = true
+
+      local fcitx_cmd = "fcitx5-remote"
+      vim.keymap.set("i", "<Esc>", function()
+        vim.fn.system("fcitx5-remote -c")
+        
+        return "<Esc>"
+      end, { expr = true, silent = true })
+
+
     '';
   };
 }
