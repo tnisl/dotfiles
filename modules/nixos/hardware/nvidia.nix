@@ -3,7 +3,7 @@
   hardware = {
 
 	nvidia = {
-  		modesetting.enable = false;
+  		modesetting.enable = true;
         	powerManagement.enable = true;
         	powerManagement.finegrained = true;
         	open = false;

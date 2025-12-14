@@ -1,7 +1,11 @@
 {pkgs, config, ...}:
 {
   programs = {
-    sway.enable = true;
+    sway = {
+      enable =true;
+      wrapperFeatures.gtk = true;
+
+    };
     hyprland.enable = true;
     dconf.enable = true;
     firefox.enable = true;
@@ -16,12 +20,9 @@
     config.boot.kernelPackages.cpupower
     jdk21
     lshw
-    swayosd
     asusctl # asus only!
     powertop # tuning 
-    undervolt
     wlsunset
-    libsForQt5.qt5ct
   ];
 
 

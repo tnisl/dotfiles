@@ -23,7 +23,7 @@
       "i915.enable_psr=2"
       "nvme_core.default_ps_max_latency_us=5500"
       "pcie_aspm=force"
-      "maxcpus=4"
+      #"maxcpus=4"
     ];
 
 	};

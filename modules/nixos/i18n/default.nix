@@ -9,9 +9,14 @@
         fcitx5-bamboo
         catppuccin-fcitx5
         fcitx5-material-color
+        qt6Packages.fcitx5-with-addons
   		];
-  
+
+      fcitx5.settings.addons.classicui.globalSection.Theme = "Catppuccin Mocha Blue";
     };
+
+
+
   
     #environment.sessionVariables = {
     #  GTK_IM_MODULE = "fcitx5";
