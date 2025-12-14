@@ -1,6 +1,51 @@
 {pkgs, lib, config, ...}:
 let
   mocha = import ../theme.nix;
+  nightlight = pkgs.writeShellScriptBin "nightlight" ''
+    
+
+
+    if ${pkgs.procps}/bin/pgrep -x "wlsunset" > /dev/null
+    then
+      ${pkgs.procps}/bin/pkill -x wlsunset
+    else
+      ${pkgs.wlsunset}/bin/wlsunset -t 5000 > /dev/null 2>&1 &
+    fi
+
+  '';
+
+  state = pkgs.writeShellScriptBin "state" ''
+    ${pkgs.procps}/bin/pgrep -x wlsunset
+  '';
+
+
+
+  capture = pkgs.writeShellScriptBin "capture" ''
+    PATH_IMG="$HOME/Pictures/Screenshot_$(${pkgs.coreutils}/bin/date +'%Y-%m-%d_%H-%M-%S').png"
+  
+    ${pkgs.coreutils}/bin/mkdir -p "$HOME/Pictures"
+  
+    ${pkgs.grim}/bin/grim "$PATH_IMG"
+
+    ${pkgs.swaynotificationcenter}/bin/swaync-client -cp 
+
+    ${pkgs.coreutils}/bin/sleep 0.5
+  
+    choose=$(${pkgs.libnotify}/bin/notify-send -w -t 5000 \
+      "Screen Captured!" \
+      "Saved at $PATH_IMG" \
+      --action="open=Open" \
+      --action="delete=Delete")
+    if [ $choose == "open" ]; then
+      ${pkgs.firefox}/bin/firefox $PATH_IMG
+    else
+      ${pkgs.coreutils}/bin/rm -rf $PATH_IMG
+      ${pkgs.coreutils}/bin/sleep 0.5
+      ${pkgs.libnotify}/bin/notify-send "Deleted!"
+    fi
+
+  '';
+
 in
 {
 
@@ -19,7 +64,7 @@ in
       positionX = "left";       
       positionY = "top";         
       control-center-width = 400; 
-      fit-to-screen = false;
+      fit-to-screen = true;
       # widgets that allowed to popup
       widgets = [
         "title"           
@@ -60,25 +105,33 @@ in
             {
               label = "";
               type = "toggle";
-              active = "true";
+              command = "[[ $SWAYNC_TOGGLE_STATE == true ]] && ${pkgs.networkmanager}/bin/nmcli radio wifi on || ${pkgs.networkmanager}/bin/nmcli radio wifi off";
+              update-command = "[[ $(${pkgs.networkmanager}/bin/nmcli radio wifi) == \"enabled\" ]] && ${pkgs.coreutils}/bin/echo true || ${pkgs.coreutils}/bin/echo false";
+
             }
             
             {
-              label = "󰂯";
-              type = "toggle";
-              active = "true";
-            }     
-
-            {
               label = "";
               type = "toggle";
-              active = "true";
+              #command = "${nightlight}/bin/nightlight";
+              command = "[[ $SWAYNC_TOGGLE_STATE == true ]] && ${pkgs.wlsunset}/bin/wlsunset -t 5000  || ${pkgs.procps}/bin/pkill -x wlsunset";
+              update-command = "[[ $(${pkgs.procps}/bin/pgrep -x wlsunset) != '' ]]  && ${pkgs.coreutils}/bin/echo true || ${pkgs.coreutils}/bin/echo false";
+
             }
+
+            {
+              label = "󰂯";
+              type = "normal";
+              command = "${pkgs.swaynotificationcenter}/bin/swaync-client -cp ; ${pkgs.coreutils}/bin/sleep 0.5 ; ${pkgs.blueman}/bin/blueman-manager";
+            }     
+
+
 
             {
               label = "󰄄";
               type = "normal";
               active = "true";
+              command = "${capture}/bin/capture";
             }
 
           ];
@@ -126,18 +179,28 @@ in
 
 
       /* Notification (you can try notify-send :D )*/
+
+
       .notification {
-        box-shadow: 0 0 0 1px ${mocha.mauve};
-        border-radius: 10px;
-        margin: 10px;
+        border: none;
+        border-radius: 0px;
+        background: transparent;
       }
+
+
+
       
-      /* Nội dung bên trong bong bóng */
       .notification-content {
         background: ${mocha.base};
         color: ${mocha.text};      
         padding: 10px;
+        border: 3px solid ${mocha.mauve};
         border-radius: 10px;
+      }
+
+      .notification-action button{
+        background: ${mocha.red};
+        color: ${mocha.base};
       }
 
 
