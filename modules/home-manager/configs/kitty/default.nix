@@ -7,8 +7,9 @@
 			confirm_os_window_close = 0;
 			enable_audio_bell = false;
       background_opacity = "0.85";
-			cursor_trail = 0;
-			cursor_trail_decay = "0.1 0.4";
+      cursor_trail = 3;             # Độ dài của đuôi (số lượng frame)
+      cursor_trail_decay = "0.1 0.4"; # Tốc độ tan biến của đuôi
+      cursor_trail_start_threshold = 0; # Chỉ hiện đuôi khi di chuyển xa hơn 2 ô
       # map = "ctrl+backspace send_text all \\x17";
 
 			background = "#1e1e2e";
