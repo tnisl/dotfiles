@@ -23,6 +23,7 @@
     asusctl # asus only!
     powertop # tuning 
     wlsunset
+    intel-undervolt
   ];
 
 
