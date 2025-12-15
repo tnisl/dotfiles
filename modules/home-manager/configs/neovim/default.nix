@@ -16,8 +16,6 @@
 
 
 
-
-
   
   programs.neovim = {
     enable = true;
@@ -46,17 +44,27 @@
     plugins = with pkgs.vimPlugins; [
       nvim-web-devicons     
 
-      nvim-autopairs
       comment-nvim
+      {
+        plugin = nvim-autopairs;
+        type = "lua";
+        config = ''
+          require("nvim-autopairs").setup {}
+        '';
+      }
+
+
     ];
 
     # 3. Options and keymap
     extraLuaConfig = ''
       -- 1. Options
-      vim.cmd("set expandtab")
-      vim.cmd("set tabstop=2")
-      vim.cmd("set softtabstop=2")
-      vim.cmd("set shiftwidth=2")
+      vim.opt.autoindent = true   
+      vim.opt.smartindent = true   
+      vim.opt.expandtab = true    
+      vim.opt.tabstop = 2
+      vim.opt.shiftwidth = 2
+      vim.opt.softtabstop = 2
       vim.keymap.set('i', '<C-BS>', '<C-W>', { noremap = true })
 
 
