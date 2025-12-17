@@ -1,5 +1,7 @@
 {pkgs, ...}:
-
+let
+  mocha = import ./theme.nix;
+in
 {
   #xdg.configFile."waybar/config.jsonc".source = ./config.jsonc;
 
@@ -10,7 +12,7 @@
         layer = "top";
         position = "top";
         margin-top = 5;
-        height = 20;
+        height = 30;
         width = 1850;
 
         spacing = 1;
@@ -24,11 +26,11 @@
         ];
 
         modules-center = [
-          "clock"
         ];
 
         modules-right = [
-          "group/left"
+          "group/right"
+          "tray"
         ];
 
         #hyprland workspace
@@ -37,9 +39,11 @@
           disable-scroll = true;
           all-outputs = true;
           warp-on-scroll = true;
-          format = "{name}";
+          format = "{icon} {name}";
           format-icons = {
             default = "";
+            focused = "";
+            urgent = "";
           };
         };
 
@@ -50,11 +54,17 @@
           all-outputs = true;
           warp-on-scroll = true;
           format = "{name}";
+          format-icons = {
+            default = "";
+            #focused = "";
+            #urgent = "";
+          };
+
         };
 
-        "group/left" = {
+        "group/right" = {
           orientation = "horizontal";
-          modules = ["idle_inhibitor" "tray" "power-profiles-daemon" "battery"];
+          modules = ["cpu" "memory" "temperature" "network"  "clock" "battery"];
         };
 
 
@@ -67,9 +77,21 @@
 
         
         clock = {
-          format = "{:%H:%M}";
+          format = " {:%H:%M}";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          format-alt = "{:%Y:%m:%d}";
+          format-alt = " {:%Y:%m:%d}";
+          calendar = {
+            mode = "month";
+            mode-mon-col = 3;
+            weeks-pos = "right";
+            format = {
+              months =     "<span color='${mocha.yellow}'><b>{}</b></span>";
+              days =       "<span color='${mocha.text}'><b>{}</b></span>";
+              weeks =      "<span color='${mocha.green}'><b>W{}</b></span>";
+              weekdays =   "<span color='${mocha.peach}'><b>{}</b></span>";
+              today =      "<span color='${mocha.red}'><b><u>{}</u></b></span>"; 
+            };
+          };
         };
 
         idle_inhibitor = {
@@ -108,22 +130,63 @@
             warning = 30;
             critical = 15;
           };
-          format = "{icon}";
-          tooltip-format = "{capacity}%\n{time}";
-          format-full = "{icon}";
-          format-charging = "";
-          format-plugged = "";
-          format-alt = "{capacity}% {time}";
-          format-icons = ["" "" "" "" ""];
-          disable-scroll = true;
+          format = "{icon}  {capacity}%";
+          tooltip-format = "{time}";
+          format-charging = "{icon} {capacity}%";
+          format-plugged = "󱞜 {capacity}%";
+          format-alt = "{time}";
+          tooltip-format-plugged = "Plugged";
+          tooltip-format-charging = "Charging";
+          format-icons = {
+            charging = ["󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅"];
+            default = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+          };
+          on-scroll-up = "";
+          on-scroll-down = "";
 
         };
 
         "custom/notify" = {
-          format = "";
+          format = "";
           on-click = "swaync-client -t -sw";
         };
 
+        network = {
+            interface = "wlp2s0";
+            format = "{ifname}";
+            format-wifi = "{icon} {signalStrength}%";
+            format-disconnected = "󰤭";
+            tooltip-format-wifi = "{essid} ({signalStrength}%) {icon}";
+            tooltip-format-ethernet = "{ifname} ";
+            max-length = 50;
+
+            format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
+
+            on-scroll-up = "";
+            on-scroll-down = "";
+        };
+        cpu = {
+            interval = 10;
+            format = " {}%";
+            max-length = 10;
+            on-scroll-up = "";
+            on-scroll-down = "";
+        };
+
+        memory = {
+          interval = 10;
+          format = " {}%";
+          max-length = 10;
+          on-scroll-up = "";
+          on-scroll-down = "";
+        };
+        temperature = {
+          thermal-zone = 2;
+          hwmon-path = "/sys/class/hwmon/hwmon6/temp3_input";
+          format = " {temperatureC}°C";
+          on-scroll-up = "";
+          on-scroll-down = "";
+        };
 
 
       };

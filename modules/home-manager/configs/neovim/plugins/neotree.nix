@@ -14,18 +14,18 @@
         vim.g.mapleader = " "
         vim.keymap.set('n', '<Leader>e', ':Neotree filesystem toggle left<CR>', {})
 
-        vim.keymap.set('n', '<C-l>', function()
-          if vim.bo.filetype == "neo-tree" then
-            vim.cmd.wincmd "p" 
-          end
-        end, { desc = "Toggle NeoTree Focus" })
+        -- vim.keymap.set('n', '<C-l>', function()
+        --   if vim.bo.filetype == "neo-tree" then
+        --     vim.cmd.wincmd "p" 
+        --   end
+        -- end, { desc = "Toggle NeoTree Focus" })
 
 
-        vim.keymap.set('n', '<C-h>', function()
-          if vim.bo.filetype ~= "neo-tree" then
-            vim.cmd "Neotree focus"
-          end
-        end)
+        -- vim.keymap.set('n', '<C-h>', function()
+        --   if vim.bo.filetype ~= "neo-tree" then
+        --     vim.cmd "Neotree focus"
+        --   end
+        -- end)
 
 
         '';

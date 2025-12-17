@@ -7,8 +7,10 @@
         config = ''
         
         require('lualine').setup({
-          theme = "catppuccin",
-          globalstatus = true,
+          options = {
+            theme = "catppuccin",
+            globalstatus = true,
+          },
         })
         '';
       }
