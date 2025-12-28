@@ -5,8 +5,13 @@
 
     xserver = {
       enable = true;
-      videoDrivers = ["modesetting"];
+      videoDrivers = [
+      "modesetting"
+      #"nvidia"
+      ];
+      windowManager.i3.enable = true;
     };
+
 
 
     
@@ -19,7 +24,16 @@
       enable = true;
       pulse.enable = true;
     };
-    libinput.enable = true;
+    libinput = {
+      enable = true;
+      touchpad = {
+        naturalScrolling = true;
+        tapping = true;
+        disableWhileTyping = true;
+        clickMethod = "clickfinger";
+      };
+      
+    };
 
     power-profiles-daemon.enable = true;
 

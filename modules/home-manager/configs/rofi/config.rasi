@@ -3,6 +3,7 @@ configuration {
     drun-display-format:        "{name}";
     hover-select:               true;
     font: "CaskaydiaCove Nerd Font 12";
+    terminal: "kitty";
 }
 
 @theme "~/.cache/wallust/colors-rofi.rasi"

@@ -89,6 +89,13 @@
         #file manager
         "${modifier}+e" = "exec foot -e yazi";
 
+
+      };
+
+      output = {
+        eDP-1 = {
+          resolution = "1920x1080@60Hz";
+        };
       };
 
 
@@ -96,12 +103,10 @@
 
     };
 
-      #extraConfig = ''
-      #    bindsym --whole-window Mod4+Shift+button1 resize
-      #'';
-
-
-
+    extraConfig = ''
+      bindgesture swipe:right workspace prev
+      bindgesture swipe:left workspace next
+    '';
   };
 
 }

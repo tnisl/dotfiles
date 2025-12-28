@@ -7,12 +7,10 @@
     		cava
     		btop
     		wallust
-    		#fastfetch
     		swww
         nitch
-    #nwg-look
     #for testing, not for real using
-    #quickshell
+        quickshell
     #pamixer
     #pulseaudio
 	];

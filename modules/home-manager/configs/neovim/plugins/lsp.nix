@@ -5,7 +5,7 @@
         plugin = nvim-lspconfig;
         type = "lua";
         config = ''
-        vim.lsp.enable({'lua_ls', 'pyright', 'clangd', "nil_ls"})
+        vim.lsp.enable({'lua_ls', 'pyright', 'clangd', "nil_ls", "qmlls"})
         '';
       }
   ];

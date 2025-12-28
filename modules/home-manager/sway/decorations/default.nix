@@ -44,11 +44,12 @@ in
 
       bars = [];
 
-
-
-
-
   };
+
+  extraConfig = ''
+    corner_radius 10
+
+  '';
 }; 
 
 

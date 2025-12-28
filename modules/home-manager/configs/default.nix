@@ -14,5 +14,6 @@
     ./yazi/default.nix
 		./neovim/default.nix
     ./foot/default.nix
+    ./spicetify/default.nix
 	];
 }

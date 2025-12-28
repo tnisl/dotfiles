@@ -4,6 +4,8 @@
 {
   wayland.windowManager.sway = {
     enable = true;
+    package = pkgs.swayfx;
+    checkConfig = false;
   };
   imports = [
     ./keybinds/default.nix

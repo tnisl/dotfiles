@@ -2,11 +2,11 @@
 
 {
 	home.packages = with pkgs ; [
-		hyprlock
+        hyprlock
     		hyprsunset
     		hypridle
     		hyprpicker
     		hyprcursor
-		hyprpolkitagent
+		    hyprpolkitagent
 	];
 }

@@ -1,10 +1,15 @@
-{lib, ...}:
+{lib, pkgs, ...}:
 {
   xdg.portal = {
   	enable = true;
     wlr.enable = true;
-    #gtk.enable = true;
-    #hypr.enable = true;
+
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk 
+      xdg-desktop-portal-wlr 
+      xdg-desktop-portal-hyprland 
+    ];
   };
 
 }

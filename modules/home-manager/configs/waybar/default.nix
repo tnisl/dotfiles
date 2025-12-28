@@ -39,7 +39,7 @@ in
           disable-scroll = true;
           all-outputs = true;
           warp-on-scroll = true;
-          format = "{icon} {name}";
+          format = "{name}";
           format-icons = {
             default = "";
             focused = "";
@@ -181,8 +181,8 @@ in
           on-scroll-down = "";
         };
         temperature = {
-          thermal-zone = 2;
-          hwmon-path = "/sys/class/hwmon/hwmon6/temp3_input";
+          #thermal-zone = 2;
+          #hwmon-path = "/sys/class/hwmon/hwmon6/temp3_input";
           format = " {temperatureC}°C";
           on-scroll-up = "";
           on-scroll-down = "";

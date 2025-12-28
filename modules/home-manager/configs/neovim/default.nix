@@ -72,6 +72,8 @@
       vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to upper window' })
       vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right window' })
 
+      vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], {noremap = true})
+
 
       vim.opt.number = true
       vim.opt.relativenumber = true

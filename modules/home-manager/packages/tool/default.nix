@@ -17,16 +17,10 @@
     steam-run
     blueman
     networkmanagerapplet
-    bluez
-    bluez-tools
     grim
     slurp
     wl-clipboard
-    libnotify
-    pavucontrol
     swaynotificationcenter
     imagemagick
-    brightnessctl
-    gnome-keyring
   ];
 }
